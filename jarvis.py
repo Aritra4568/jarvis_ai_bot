@@ -53,8 +53,11 @@ if __name__ == "__main__":
             query = input("What should I search: ")
             print("Just a moment...")
             for i in search(query, tld="co.in", num=10, stop=10, pause=2):
+                webbrowser.open(i)
+                print("if you want to go back to pages you have visited ,here 👇 are the links for that.") 
                 print(i)
-                            
+
+
         elif 'facebook' in choice:
             webbrowser.open("https:\\www.facebook.com")
         
