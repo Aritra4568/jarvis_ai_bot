@@ -10,25 +10,28 @@ os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
 os.system("clear")
 #one time print
 print("Hi, I am JARVIS. Your own AI bot. I can perform many things.")
+name = input("By the way what's your name: ")
+print("So your name is "+name)
+print("I will remember that.")
 
 #wishing
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
-        print("Good morning!")
+        print("Good morning " + name + "!")
     if hour>=12 and hour<=18:
-        print("Good afternoon!")
+        print("Good afternoon " + name + "!")
     if  hour>18:
-        print("Good evening!")
+        print("Good evening " + name + "!")
 
 #commands    
 if __name__ == "__main__":
     wishMe()
     while True:
-        
+        print("")
         print("Type 'help' for all the commands")
         print("")
-        choice = input("What can I do for you: ")
+        choice = input("What can I do for you " + name + ": ")
         
         if 'wikipedia' in choice:
             print("")
@@ -74,7 +77,7 @@ if __name__ == "__main__":
             print("Useful commands:")
             print("")
             print("youtube")
-            print("google")
+            print("open google")
             print("search in google")
             print("time")
             print("facebook")
@@ -135,10 +138,10 @@ if __name__ == "__main__":
             hour = int(datetime.datetime.now().hour)
             print("")
             if  hour>18:
-                print("Thanks for using me. Good night! 😴 .")
+                print("Thanks for using me " +name + "." + "Good night! 😴 .")
             
             else:
-                print("Thanks for using me. Have a good day! 😃")
+                print("Thanks for using me "+name+"."+"Have a good day! 😃")
             exit()
        
         else:
@@ -147,7 +150,6 @@ if __name__ == "__main__":
             for url in search(choice, tld="co.in", num=1, stop = 1, pause = 2):
                 os.system("clear")
                 webbrowser.open("https://google.com/search?q=%s" % choice)
-       
 
 
 
