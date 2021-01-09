@@ -26,7 +26,7 @@ To install JARVIS in your linux system perform the following steps:
 
 4. Follow the onscreen instructions.
 
-   
+
 
 ## Credit
 
