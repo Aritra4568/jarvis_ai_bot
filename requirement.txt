@@ -3,3 +3,5 @@ datetime
 google
 google-search
 pyfiglet
+pyttsx3
+pypdf4

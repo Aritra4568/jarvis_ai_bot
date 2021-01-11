@@ -5,20 +5,27 @@ from googlesearch import search
 import os
 import sys
 import pyfiglet
-
+import pyttsx3
+import PyPDF4
+import warnings
+warnings.simplefilter("ignore")
 #installation
 command="pip install -r requirement.txt && exit"
 os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
-command="gsettings set org.gnome.desktop.background picture-uri file:///home/aritra/jarvis/jarvis.jpg && exit"
-os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
-
-
+file=input("What is your computer name: ")
+permission=input("Can I change your wallpaper(y/n): ")
+if permission == 'y':
+    command="gsettings set org.gnome.desktop.background picture-uri file:///home/"+file+"/downloads/jarvis_ai_bot/img2.jpg && exit"
+    os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
+    print("have a look in your wallpaper")
+if permission == 'n':
+    print("That's okay")
 os.system("clear")
 #one time print
 print("Hi, I am JARVIS. Your own AI bot. I can perform many things.")
 name = input("By the way what's your name: ")
 print("So your name is "+name)
-print("I will remember that. \nHave a look in your wallpaper.")
+print("I will remember that. \nBut I don't have enough memory to remind.")
 #one time quistion
 o = input("By the way did you heard about my little brother(y/n): ")
 if o == 'y':
@@ -86,6 +93,18 @@ if __name__ == "__main__":
             os.system("clear")
             webbrowser.open("https:\\www.flipkart.com")
         
+        elif 'read a book' in choice:
+            book = open('rust language.pdf', 'rb')
+            pdfReader = PyPDF4.PdfFileReader(book)
+            pages = pdfReader.numPages
+
+            speaker = pyttsx3.init()
+            for num in range(11, pages):
+                page = pdfReader.getPage(num)
+                text = page.extractText()
+                speaker.say(text)
+                speaker.runAndWait()
+
         elif 'help' in choice:
             print("")
             print("Useful commands:")
