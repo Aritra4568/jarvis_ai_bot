@@ -1,17 +1,17 @@
+import os
+import sys
+#installation
+command="pip install -r requirement.txt && exit"
+os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
 import wikipedia
 import datetime
 import webbrowser
 from googlesearch import search
-import os
-import sys
 import pyfiglet
 import pyttsx3
 import PyPDF4
 import warnings
 warnings.simplefilter("ignore")
-#installation
-command="pip install -r requirement.txt && exit"
-os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
 file=input("What is your computer name: ")
 permission=input("Can I change your wallpaper(y/n): ")
 if permission == 'y':
