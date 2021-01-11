@@ -15,7 +15,7 @@ os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
 file=input("What is your computer name: ")
 permission=input("Can I change your wallpaper(y/n): ")
 if permission == 'y':
-    command="gsettings set org.gnome.desktop.background picture-uri file:///home/"+file+"/downloads/jarvis_ai_bot/img2.jpg && exit"
+    command="gsettings set org.gnome.desktop.background picture-uri file:///home/"+file+"/jarvis_ai_bot/img2.jpg && exit"
     os.system("gnome-terminal -e 'bash -c \""+command+";bash\"'")
     print("have a look in your wallpaper")
 if permission == 'n':
